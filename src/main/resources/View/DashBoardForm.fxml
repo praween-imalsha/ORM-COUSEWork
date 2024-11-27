@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="774.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashBoard">
+   <children>
+      <AnchorPane fx:id="ButtonPane" layoutY="-1.0" prefHeight="818.0" prefWidth="232.0" style="-fx-background-color: #1b51ca;">
+         <children>
+            <Button fx:id="StudentManagmentBtn" layoutX="23.0" layoutY="302.0" mnemonicParsing="false" onAction="#StudentManageOnAction" prefHeight="75.0" prefWidth="187.0" style="-fx-background-radius: 10px;" text="Student Managment">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="CoourseManagmentbtn" layoutX="19.0" layoutY="409.0" mnemonicParsing="false" onAction="#CourseManagmentOnAction" prefHeight="66.0" prefWidth="187.0" style="-fx-background-radius: 10px;" text="Course Managment‍" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="DashBoardbtn" layoutX="23.0" layoutY="120.0" mnemonicParsing="false" onAction="#DashBoradOnAction" prefHeight="66.0" prefWidth="187.0" style="-fx-background-radius: 10px;" text="DashBoard" textFill="#141313">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="logout" layoutX="69.0" layoutY="723.0" mnemonicParsing="false" onAction="#logOutTheSystem" prefHeight="39.0" prefWidth="74.0" style="-fx-background-color: #5dbea3; -fx-background-radius: 10;" text="LOGUOT" textFill="#f2ecec">
+               <font>
+                  <Font name="Dyuthi Regular" size="13.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Button fx:id="paymentMangmentBTN" layoutX="19.0" layoutY="505.0" mnemonicParsing="false" onAction="#PaymentManagmentOnAction" prefHeight="75.0" prefWidth="187.0" style="-fx-background-radius: 10px;" text="Payment Managment 💵">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="User" layoutX="23.0" layoutY="205.0" mnemonicParsing="false" onAction="#UserManageOnAction" prefHeight="66.0" prefWidth="187.0" style="-fx-background-radius: 10px;" text="User Managment">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="30.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/school_13706603.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="89.0" fitWidth="140.0" layoutX="62.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/1.png" />
+               </image></ImageView>
+            <ImageView fitHeight="47.0" fitWidth="45.0" layoutX="23.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/png-clipart-computer-icons-privacy-policy-admin-icon-copyright-rim.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="31.0" fitWidth="38.0" layoutX="19.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/download.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Emptypane" layoutX="232.0" layoutY="-1.0" prefHeight="818.0" prefWidth="1195.0" style="-fx-background-color: white;" />
+   </children>
+</AnchorPane>

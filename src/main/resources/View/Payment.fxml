@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PaymentForm">
+   <children>
+      <AnchorPane fx:id="RegistaionFome" layoutX="-8.0" prefHeight="804.0" prefWidth="1370.0">
+         <children>
+            <DatePicker fx:id="datecombo" layoutX="814.0" layoutY="160.0" prefHeight="28.0" prefWidth="298.0" promptText="Date" />
+            <Button layoutX="823.0" layoutY="436.0" mnemonicParsing="false" onAction="#RegisterComfirmOnAction" prefHeight="38.0" prefWidth="125.0" style="-fx-background-color: #0095ff;" text="Register Comfirm">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="971.0" layoutY="436.0" mnemonicParsing="false" onAction="#clearOnActionRegistaion" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: #7AB2D3;" text="Clear">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TableView fx:id="StudentTable" layoutX="69.0" layoutY="530.0" prefHeight="200.0" prefWidth="1278.0">
+               <columns>
+                  <TableColumn fx:id="colsid" prefWidth="86.39995956420898" text="SID" />
+                  <TableColumn fx:id="colsname" prefWidth="139.2000274658203" text="Student Name" />
+                  <TableColumn fx:id="colcid" prefWidth="76.79998779296875" text="CID" />
+                  <TableColumn fx:id="colcname" prefWidth="162.39996337890625" text="Course Name" />
+                  <TableColumn fx:id="coldate" prefWidth="178.40008544921875" text="Date" />
+                  <TableColumn fx:id="colduration" prefWidth="190.39990234375" text="Duration" />
+                  <TableColumn fx:id="colPayment" prefWidth="190.39990234375" text="Payment" />
+                  <TableColumn fx:id="coldueAmonut" prefWidth="155.2000732421875" text="Due Amonut" />
+                  <TableColumn fx:id="deleteBtn" prefWidth="96.7999267578125" text="Delete" />
+               </columns>
+            </TableView>
+            <Text fx:id="registaionNOtxt" layoutX="181.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="205.13668823242188">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="courseid" layoutX="35.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="programe- ID :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Paymenttxt" layoutX="814.0" layoutY="251.0" prefHeight="26.0" prefWidth="298.0" />
+            <Text fx:id="payment" layoutX="818.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="payment1" layoutX="818.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <JFXComboBox fx:id="cmbstudentId" layoutX="201.0" layoutY="221.0" onAction="#cmbstudentOnAction" prefHeight="33.0" prefWidth="188.0" />
+            <Label layoutX="69.0" layoutY="242.0" text="student_id">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="413.0" layoutY="243.0" prefHeight="16.0" prefWidth="113.0" text="student_Name">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblstudentname" layoutX="516.0" layoutY="234.0" prefHeight="41.0" prefWidth="207.0" />
+            <JFXComboBox fx:id="cmbcourse" layoutX="147.0" layoutY="343.0" onAction="#cmbcouseOnAction" prefHeight="33.0" prefWidth="188.0" />
+            <Label fx:id="lblregno" layoutX="172.0" layoutY="142.0" prefHeight="55.0" prefWidth="236.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="352.0" layoutY="363.0" prefHeight="16.0" prefWidth="113.0" text="programe_name">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblprogramename" layoutX="455.0" layoutY="352.0" prefHeight="41.0" prefWidth="205.0" />
+            <Label layoutX="58.0" layoutY="449.0" prefHeight="16.0" prefWidth="113.0" text="Duration">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblduration" layoutX="161.0" layoutY="438.0" prefHeight="41.0" prefWidth="205.0" />
+            <Label layoutX="389.0" layoutY="446.0" prefHeight="16.0" prefWidth="113.0" text="fee">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblfee" layoutX="492.0" layoutY="435.0" prefHeight="41.0" prefWidth="205.0" />
+            <Label fx:id="lblamount" layoutX="926.0" layoutY="304.0" prefHeight="41.0" prefWidth="205.0" />
+         </children>
+      </AnchorPane>
+      <Text fx:id="RegistertaionNumber" layoutX="66.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registaion NO:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
