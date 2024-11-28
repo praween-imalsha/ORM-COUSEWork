@@ -13,6 +13,10 @@ public class UserBoImpl implements UserBO {
 
     UserDao userDao = (UserDao) DaoFactory.getDaoFactory().getDAO(DaoFactory.DAOTypes.USER);
 
+    @Override
+    public boolean saveUser(User user) throws IOException {
+        return userDao.save(user); // Call DAO to save the user
+    }
 
     @Override
     public List<User> getAllUser() throws IOException {

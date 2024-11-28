@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -9,68 +13,73 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="paymentPane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PaymentFormController">
-   <children>
-      <Text fx:id="studentHeading" fill="#43b4ff" layoutX="300.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGE PAYMENTS">
+<AnchorPane fx:id="rootStudent" opacity="0.95" prefHeight="872.0" prefWidth="1216.0" style="-fx-background-color: white; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PaymentFormController">
+    <children>
+        <Label layoutX="481.0" layoutY="12.0" prefHeight="64.0" prefWidth="341.0" text="Payment form" textFill="#5b0851">
+            <font>
+                <Font name="DejaVu Serif Bold" size="42.0" />
+            </font>
+        </Label>
+        <Separator layoutX="60.0" layoutY="355.0" prefHeight="30.0" prefWidth="1091.0" />
+        <Text fx:id="studentid" fill="#111111" layoutX="161.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment ID :">
+            <font>
+                <Font name="FreeSerif" size="22.0" />
+            </font>
+        </Text>
+        <TextField fx:id="txt_payment_ID" layoutX="306.0" layoutY="116.0" prefHeight="34.0" prefWidth="222.0" promptText=" " style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <Text fx:id="studentid1" fill="#111111" layoutX="161.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register ID :">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="FreeSerif" size="22.0" />
          </font>
       </Text>
-      <TableView fx:id="paymentTbl" layoutX="53.0" layoutY="300.0" prefHeight="297.0" prefWidth="876.0">
+      <Text fx:id="studentid11" fill="#111111" layoutX="161.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Course Fee :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txt_Full_Course_Fee" layoutX="306.0" layoutY="258.0" prefHeight="34.0" prefWidth="222.0" promptText="500000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <ComboBox fx:id="cmb_Registr_ID" layoutX="306.0" layoutY="184.0" prefHeight="34.0" prefWidth="222.0" promptText="Registr ID " style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <Text fx:id="studentid2" fill="#111111" layoutX="651.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Advanced :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPaidAmount" layoutX="765.0" layoutY="112.0" prefHeight="34.0" prefWidth="222.0" promptText="25000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <Text fx:id="studentid12" fill="#111111" layoutX="651.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="studentid111" fill="#111111" layoutX="651.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cash :">
+
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCash" layoutX="765.0" layoutY="254.0" prefHeight="34.0" prefWidth="222.0" promptText="500000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <TextField fx:id="txtAmount" layoutX="765.0" layoutY="183.0" prefHeight="34.0" prefWidth="222.0" promptText="25000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <TableView fx:id="tbl_registr" layoutX="126.0" layoutY="411.0" prefHeight="420.0" prefWidth="950.0" style="-fx-border-radius: 15;">
          <columns>
-            <TableColumn fx:id="colPaymentId" prefWidth="110.0" text="Payment ID" />
-            <TableColumn fx:id="colRegisterId" prefWidth="110.0" text="Registration ID" />
-            <TableColumn fx:id="colPaymentDate" prefWidth="110.0" text="Date" />
-            <TableColumn fx:id="colUpfrontPayment" prefWidth="110.0" text="Upfront Payment" />
-            <TableColumn fx:id="colTotalAmount" prefWidth="110.0" text="Total Amount" />
-            <TableColumn fx:id="colDueAmount" prefWidth="110.0" text="Due Amount" />
+            <TableColumn fx:id="col_payment_ID" prefWidth="102.0" text="payment_Id" />
+            <TableColumn fx:id="col_registr_ID" prefWidth="147.0" text="Register ID" />
+            <TableColumn fx:id="col_FullCourse_fee" prefWidth="133.0" text="Full Course fee" />
+            <TableColumn fx:id="col_paid_Amount" prefWidth="144.0" text="Advance" />
+            <TableColumn fx:id="col_Amount" prefWidth="125.0" text="Amount" />
+            <TableColumn fx:id="col_pay" prefWidth="144.0" text="cash" />
+            <TableColumn fx:id="col_balance" prefWidth="154.0" text="Balance" />
          </columns>
       </TableView>
-      <AnchorPane layoutX="13.0" layoutY="46.0" prefHeight="237.0" prefWidth="1067.0" style="-fx-background-color: #00d9ff;">
-         <children>
-      
-            <Button fx:id="saveBtn" layoutX="135.0" layoutY="166.0" mnemonicParsing="false" onAction="#saveBtnOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-radius: 12; -fx-background-color: #0095ff;" text="Save" />
-            <Button fx:id="updateBtn" layoutX="266.0" layoutY="166.0" mnemonicParsing="false" onAction="#updateBtnOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-radius: 12; -fx-background-color: #0095ff;" text="Update" />
-            <Button fx:id="deleteBtn" layoutX="406.0" layoutY="166.0" mnemonicParsing="false" onAction="#deleteBtnOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-radius: 12; -fx-background-color: #0095ff;" text="Delete" />
-            <Button fx:id="clearBtn" layoutX="513.0" layoutY="166.0" mnemonicParsing="false" onAction="#clearBtnOnAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-radius: 12; -fx-background-color: #0095ff;" text="Clear" />
-            <Text layoutX="13.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment ID">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtPaymentID" layoutX="93.0" layoutY="36.0" prefWidth="140.0" promptText="Enter payment Id" />
-            <Text layoutX="253.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration ID">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ComboBox fx:id="cmbRegisterID" layoutX="353.0" layoutY="36.0" onAction="#cmbRegisterIDOnAction" opacity="0.66" prefWidth="140.0" promptText="Enter register Id" style="-fx-background-radius: 10;" visibleRowCount="2" />
-            <Text layoutX="686.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtPaymentDate" layoutX="756.0" layoutY="33.0" prefWidth="140.0" promptText="Enter payment date" />
-      
-            <Text layoutX="13.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upfront Payment">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtUpfrontPayment" layoutX="133.0" layoutY="86.0" prefWidth="140.0" promptText="Enter upfront payment" />
-            <Text layoutX="293.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtTotalAmount" layoutX="393.0" layoutY="86.0" prefWidth="140.0" promptText="Enter total amount" />
-            <Text layoutX="661.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Due Amount">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtDueAmount" layoutX="764.0" layoutY="86.0" prefWidth="140.0" promptText="Enter due amount" />
-         </children>
-      </AnchorPane>
-   </children>
+      <JFXButton fx:id="btnPay" layoutX="543.0" layoutY="310.0" onAction="#btn_Payment_onAction" prefHeight="45.0" prefWidth="116.0" style="-fx-background-color: #5b0d53; -fx-background-radius: 10px;" text="PAY" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="70.0" layoutY="68.0" prefHeight="30.0" prefWidth="1091.0" />
+    </children>
 </AnchorPane>

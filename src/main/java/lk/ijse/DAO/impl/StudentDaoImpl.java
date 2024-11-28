@@ -33,6 +33,11 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
+    public String generateNewID() throws IOException {
+        return "";
+    }
+
+    @Override
     public List<Student> getAll() throws IOException {
         return List.of();
     }

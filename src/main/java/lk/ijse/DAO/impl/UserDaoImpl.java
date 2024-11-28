@@ -39,6 +39,7 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+
     @Override
     public List<User> getaAll() throws IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
@@ -54,19 +55,27 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean save(User user) throws IOException {
-        Transaction transaction = null;
-        try (Session session = FactoryConfiguration.getInstance().getSession()) {
-            transaction = session.beginTransaction();
-            session.save(user); // Hibernate will generate the ID
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            session.save(user);  // Save the user object
             transaction.commit();
-            return true; // Successfully saved
+            return true;  // Return true if user is saved successfully
         } catch (Exception e) {
             if (transaction != null) {
-                transaction.rollback();
+                transaction.rollback(); // Rollback on error
             }
-            e.printStackTrace(); // Log the error for debugging
-            return false; // Failed to save
+            e.printStackTrace();
+            return false;  // Return false on failure
+        } finally {
+            session.close();  // Always close the session
         }
+    }
+
+    @Override
+    public String generateNewID() throws IOException {
+        return "";
     }
 
     @Override

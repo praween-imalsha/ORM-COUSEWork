@@ -17,4 +17,7 @@ public class CourseDto {
     private String duration;
 
     private double fee;
+
+    public CourseDto(int id, String programName, double fee, String duration) {
+    }
 }

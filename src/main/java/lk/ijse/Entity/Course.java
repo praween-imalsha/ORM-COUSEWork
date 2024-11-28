@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -26,9 +29,9 @@ public class Course {
 
         public Course(int programId) {
         }
+        @OneToMany(mappedBy = "Course", cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<Registration> registrations = new ArrayList<>();
 
 
-       /* @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
-        private List<Registration> registrations =new ArrayList<>();
-*/
+
 }

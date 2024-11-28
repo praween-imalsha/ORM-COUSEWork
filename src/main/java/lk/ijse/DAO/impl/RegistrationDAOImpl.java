@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class RegistrationDAOImpl implements RegistrationDAO {
+
     @Override
     public boolean save(Registration registration) throws IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
@@ -23,6 +24,11 @@ public class RegistrationDAOImpl implements RegistrationDAO {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String generateNewID() throws IOException {
+        return "";
     }
 
     @Override

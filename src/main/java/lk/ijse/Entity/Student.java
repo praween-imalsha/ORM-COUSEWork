@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,8 +28,18 @@ public class Student {
 
         private LocalDate enrollmentDate;
 
-
+        @ManyToOne
+        private User user;
+        @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<Registration> registrations = new ArrayList<>();
         public Student(int studentId) {
+        }
+
+        public Student(int id, String name, String address, String email, String number, LocalDate enrollmentDate) {
+        }
+
+
+        public Student(String studentName) {
         }
 }
 

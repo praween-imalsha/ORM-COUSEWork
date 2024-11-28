@@ -11,6 +11,7 @@ public interface UserBO extends SuperBo {
     List<User> getAllUser() throws IOException;
 
     boolean updateUser(User entity) throws IOException;
+    boolean saveUser(User user) throws IOException;
 
     boolean deleteUser(int id) throws IOException;
 

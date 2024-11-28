@@ -1,36 +1,65 @@
 package lk.ijse.Entity;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 public class Registration {
-
     @Id
-    private String registrationID;
-    private String date;
-    @ManyToOne
-    @JoinColumn(name = "student_id")
-    private Student student;
-    @ManyToOne
-    @JoinColumn(name = "program_id")
-    private Course course;
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String regiId;
+
+    private LocalDate enrollmentDate;
+
+    private Double Payment;
+
+    private Double DueAmount;
+
     private String studentName;
-    private String programName;
-    private double programFee;
-    private double upfrontPayment;
 
-    @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)
-    List<Payment> payments;
+    private String ProgramName;
+
+    private String duration;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "program_id", nullable = false)
+    private Course course;
 
 
-    public Registration(String registrationID, String date, Student student, Course course, String studentName, String programName, double programFee, double upfrontPayment) {
+   /* public Registration(String regiId, LocalDate enrollmentDate, Double payment, Double dueAmount, String studentName, String programName, String duration, Student student, Programme programme) {
+        this.regiId = regiId;
+        this.enrollmentDate = enrollmentDate;
+        Payment = payment;
+        DueAmount = dueAmount;
+        this.studentName = studentName;
+        ProgramName = programName;
+        this.duration = duration;
+        this.student = student;
+        this.programme = programme;
+    }*/
+
+    @Override
+    public String toString() {
+        return this.regiId; //
+
+    }
+
+
+    public String getRegistrationId() {
+        return regiId;
     }
 }

@@ -15,12 +15,12 @@ import java.util.List;
 public class CourseDaoImpl implements CourseDao {
 
     @Override
-    public boolean save(Course Dto) throws IOException {
+    public boolean save(Course course) throws IOException {
 
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.save(Dto);
+        session.save(course);
 
 
         transaction.commit();
@@ -30,6 +30,11 @@ public class CourseDaoImpl implements CourseDao {
         return false;
 
 
+    }
+
+    @Override
+    public String generateNewID() throws IOException {
+        return "";
     }
 
     @Override

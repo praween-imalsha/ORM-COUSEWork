@@ -6,7 +6,7 @@ import java.util.List;
 public interface CrudDao<T> extends SuperDao {
 
     public boolean save(T entity) throws IOException;
-
+    public String generateNewID() throws IOException;
     public List<T> getAll() throws IOException;
     public String getCurrentID() throws IOException;
     public boolean update(T entity) throws IOException;
