@@ -13,13 +13,13 @@ public class StudentBoImpl implements StudentBo {
 
     @Override
     public boolean saveStudent(Student entity) throws IOException {
-         return studentDao.save(new Student(entity.getId(),entity.getFirstName(),entity.getLastName(),entity.getAddress(),entity.getEmail(),entity.getPhoneNumber(),entity.getEnrollmentDate()));
+         return studentDao.save(new Student(entity.getId(),entity.getName(),entity.getAddress(),entity.getEmail(),entity.getPhoneNumber(),entity.getEnrollmentDate()));
     }
 
 
     @Override
     public boolean updateStudent(Student entity) throws IOException {
-        return studentDao.update(new Student(entity.getId(),entity.getFirstName(),entity.getLastName(),entity.getAddress(),entity.getEmail(),entity.getPhoneNumber(),entity.getEnrollmentDate()));
+        return studentDao.update(new Student(entity.getId(),entity.getName(),entity.getAddress(),entity.getEmail(),entity.getPhoneNumber(),entity.getEnrollmentDate()));
     }
 
     @Override

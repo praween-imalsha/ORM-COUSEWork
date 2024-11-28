@@ -14,8 +14,8 @@ public class StudentDto {
 
     private int id;
 
-    private String firstName;
-    private String lastName;
+    private String Name;
+
 
     private String address;
     private String email;
@@ -26,5 +26,6 @@ public class StudentDto {
     private LocalDate enrollmentDate;
 
 
-
+    public StudentDto(int id, String Name,  String address, String email, LocalDate enrollmentDate) {
+    }
 }

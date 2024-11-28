@@ -18,6 +18,7 @@ import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.StudentBo;
 import lk.ijse.Entity.Student;
 import lk.ijse.TM.StudentTM;
+import lk.ijse.util.Regex;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,7 +37,8 @@ public class StudentController implements Initializable {
 
     @FXML
     private Text addresstext;
-
+    @FXML
+    private TextField Nametxt;
     @FXML
     private Text idtext;
 
@@ -59,7 +61,7 @@ public class StudentController implements Initializable {
     private TableColumn<?, ?> colid;
 
     @FXML
-    private TableColumn<?, ?> collastname;
+    private TableColumn<?, ?> colname;
 
     @FXML
     private TableColumn<?, ?> colnumber;
@@ -117,8 +119,8 @@ public class StudentController implements Initializable {
     void saveOnActionStudent(ActionEvent event) throws IOException, SQLException {
 
         int id = 0;
-        String fn = firstNametxt.getText();
-        String ln = lastnametxt.getText();
+        String name = Nametxt.getText();
+
         String address = addresstxt.getText();
         String email = emailtxt.getText();
         String number = phonenumbertxt.getText();
@@ -126,7 +128,7 @@ public class StudentController implements Initializable {
 
 
 
-        Student student = new Student(id,fn,ln,address,email,number,enrollmentDate);
+        Student student = new Student(id,name,address,email,number,enrollmentDate);
 
         boolean s = false;
 
@@ -155,7 +157,7 @@ public class StudentController implements Initializable {
 
 
         for (Student student : allstudent) {
-            System.out.println(student.getId() + ": " + student.getFirstName() + " - " + student.getLastName() + " - " + student.getAddress() + " - " + student.getPhoneNumber() + " - " + student.getEmail() + " - " + student.getEnrollmentDate());
+            System.out.println(student.getId() + ": " + student.getName() + " - " +   student.getAddress() + " - " + student.getPhoneNumber() + " - " + student.getEmail() + " - " + student.getEnrollmentDate());
         }
 
 
@@ -164,11 +166,11 @@ public class StudentController implements Initializable {
         for (int i = 0; i < allstudent.size(); i++) {
             StudentTM studentTM = new StudentTM(
                     allstudent.get(i).getId(),
-                    allstudent.get(i).getFirstName(),
-                    allstudent.get(i).getLastName(),
+                    allstudent.get(i).getName(),
                     allstudent.get(i).getAddress(),
-                    allstudent.get(i).getPhoneNumber(),
                     allstudent.get(i).getEmail(),
+                    allstudent.get(i).getPhoneNumber()
+                   ,
                     new JFXButton("delete"), new JFXButton("update")
             );
 
@@ -237,15 +239,17 @@ public class StudentController implements Initializable {
 
             observableList.get(i).getUpdate().setOnAction(actionEvent -> {
                 int uid = Integer.parseInt(idtxt.getText());
-                String fn = firstNametxt.getText();
-                String ln = lastnametxt.getText();
+                String name = Nametxt.getText();
+
                 String address = addresstxt.getText();
                 String email = emailtxt.getText();
                 String number = phonenumbertxt.getText();
+
+
                 LocalDate enrollmentDate = datecombo.getValue();
 
 
-                Student student = new Student(uid,fn,ln,address,email,number,enrollmentDate);
+                Student student = new Student(uid,name,address,email,number,enrollmentDate);
 
                 boolean s = false;
 
@@ -280,11 +284,10 @@ public class StudentController implements Initializable {
 
     public void setValues(){
         colid.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colfirstname.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        collastname.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        colname.setCellValueFactory(new PropertyValueFactory<>("Name"));
         coladdress.setCellValueFactory(new PropertyValueFactory<>("address"));
-        colnumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         colemail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colnumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         deletebtnrow.setCellValueFactory(new PropertyValueFactory<StudentTM, JFXButton>("Delete"));
         updatebtnrow.setCellValueFactory(new PropertyValueFactory<StudentTM, JFXButton>("Update"));
 
@@ -319,22 +322,22 @@ public class StudentController implements Initializable {
 
     @FXML
     void lastnameKeyRelese(KeyEvent event) {
-/*
-        Regex.setTextColor(org.example.lk.ijse.util.TextField.LNAME,lastnametxt);
-*/
+
+        Regex.setTextColor(lk.ijse.util.TextField.LNAME,lastnametxt);
+
     }
     @FXML
     void emailKeyRelese(KeyEvent event) {
-/*
-        Regex.setTextColor(org.example.lk.ijse.util.TextField.EMAIL,emailtxt);
-*/
+
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL,emailtxt);
+
     }
 
     @FXML
     void firstnameKeyRelese(KeyEvent event) {
-/*
-        Regex.setTextColor(org.example.lk.ijse.util.TextField.FNAME,firstNametxt);
-*/
+
+        Regex.setTextColor(lk.ijse.util.TextField.FNAME,firstNametxt);
+
     }
 
     @FXML
@@ -346,11 +349,11 @@ public class StudentController implements Initializable {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(Integer.parseInt(idtxt.getText()));
             ArrayList<Student> students = (ArrayList<Student>) studentBo.SearchSID(Integer.parseInt(id));
-            firstNametxt.setText(students.get(0).getFirstName());
-            lastnametxt.setText(students.get(0).getLastName());
+            Nametxt.setText(students.get(0).getName());
             addresstxt.setText(students.get(0).getAddress());
-            phonenumbertxt.setText(students.get(0).getPhoneNumber());
             emailtxt.setText(students.get(0).getEmail());
+            phonenumbertxt.setText(students.get(0).getPhoneNumber());
+
         }
     }
 
@@ -361,8 +364,9 @@ public class StudentController implements Initializable {
         firstNametxt.setText("");
         lastnametxt.setText("");
         addresstxt.setText("");
-        phonenumbertxt.setText("");
         emailtxt.setText("");
+        phonenumbertxt.setText("");
+
 
     }
 

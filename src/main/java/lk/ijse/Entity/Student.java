@@ -16,10 +16,7 @@ public class Student {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
-
-        private String firstName;
-        private String lastName;
-
+        private String Name;
         private String address;
 
         @Column(unique = true)
@@ -30,7 +27,8 @@ public class Student {
         private LocalDate enrollmentDate;
 
 
-
+        public Student(int studentId) {
+        }
 }
 
 

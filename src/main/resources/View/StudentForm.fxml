@@ -19,18 +19,12 @@
          </font>
       </Text>
       <AnchorPane layoutX="14.0" layoutY="103.0" prefHeight="423.0" prefWidth="1220.0" style="-fx-background-color: white;" />
-      <TextField fx:id="firstNametxt" layoutX="71.0" layoutY="301.0" onKeyReleased="#firstnameKeyRelese" prefHeight="26.0" prefWidth="398.0" />
-      <TextField fx:id="lastnametxt" layoutX="71.0" layoutY="375.0" onKeyReleased="#lastnameKeyRelese" prefHeight="26.0" prefWidth="398.0" />
+      <TextField fx:id="Nametxt" layoutX="71.0" layoutY="301.0" onKeyReleased="#firstnameKeyRelese" prefHeight="26.0" prefWidth="398.0" />
       <TextField fx:id="addresstxt" layoutX="71.0" layoutY="444.0" onKeyReleased="#addressKeyRelese" prefHeight="26.0" prefWidth="398.0" />
       <TextField fx:id="emailtxt" layoutX="788.0" layoutY="378.0" onKeyReleased="#emailKeyRelese" prefHeight="26.0" prefWidth="332.0" />
       <TextField fx:id="phonenumbertxt" layoutX="788.0" layoutY="310.0" onKeyReleased="#mobilekeyRelese" prefHeight="26.0" prefWidth="321.0" />
       <DatePicker fx:id="datecombo" layoutX="788.0" layoutY="222.0" prefHeight="28.0" prefWidth="296.0" promptText="Date" />
-      <Text fx:id="fntext" layoutX="71.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text fx:id="lntext" layoutX="71.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+      <Text fx:id="fntext" layoutX="71.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Name">
          <font>
             <Font size="14.0" />
          </font>
@@ -62,8 +56,7 @@
       <TableView fx:id="StudentTable" layoutX="14.0" layoutY="533.0" prefHeight="257.0" prefWidth="1170.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="colfirstname" prefWidth="126.39993286132812" text="First Name" />
-            <TableColumn fx:id="collastname" prefWidth="146.4000244140625" text="Last Name" />
+            <TableColumn fx:id="colname" prefWidth="126.39993286132812" text=" Name" />
             <TableColumn fx:id="coladdress" prefWidth="177.59994506835938" text="Address" />
             <TableColumn fx:id="colemail" prefWidth="188.800048828125" text="Email" />
             <TableColumn fx:id="colnumber" prefWidth="192.0" text="Phone Number" />

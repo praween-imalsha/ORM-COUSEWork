@@ -32,6 +32,16 @@ public class StudentDaoImpl implements StudentDao {
 
     }
 
+    @Override
+    public List<Student> getAll() throws IOException {
+        return List.of();
+    }
+
+    @Override
+    public String getCurrentID() throws IOException {
+        return "";
+    }
+
 
     @Override
     public boolean update(Student dto) throws IOException {
@@ -45,6 +55,16 @@ public class StudentDaoImpl implements StudentDao {
         session.close();
 
         return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws IOException {
+        return false;
+    }
+
+    @Override
+    public Student search(String id) throws IOException {
+        return null;
     }
 
     @Override

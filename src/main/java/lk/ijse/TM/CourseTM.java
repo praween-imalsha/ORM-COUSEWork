@@ -17,4 +17,9 @@ public class CourseTM extends lk.ijse.Controller.CourseForm {
     private JFXButton update;
 
 
+
+
+    public CourseTM(int id, String programName, double fee, String duration, JFXButton delete, JFXButton update) {
+        super();
+    }
 }

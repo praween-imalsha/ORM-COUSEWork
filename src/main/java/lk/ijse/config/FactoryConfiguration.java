@@ -1,9 +1,7 @@
 package lk.ijse.config;
 
-import lk.ijse.Controller.PaymentForm;
-import lk.ijse.Entity.Course;
-import lk.ijse.Entity.Student;
-import lk.ijse.Entity.User;
+import lk.ijse.Controller.PaymentFormController;
+import lk.ijse.Entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -28,7 +26,8 @@ public class FactoryConfiguration {
             configuration.addAnnotatedClass(Student.class);
             configuration.addAnnotatedClass(User.class);
             configuration.addAnnotatedClass(Course.class);
-            configuration.addAnnotatedClass(PaymentForm.class);
+            configuration.addAnnotatedClass(Payment.class);
+            configuration.addAnnotatedClass(Registration.class);
 
             sessionFactory = configuration.buildSessionFactory();
         } catch (IOException e) {

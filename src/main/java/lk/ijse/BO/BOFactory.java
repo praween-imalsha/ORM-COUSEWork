@@ -1,9 +1,6 @@
 package lk.ijse.BO;
 
-import lk.ijse.BO.impl.CourseBOImpl;
-import lk.ijse.BO.impl.RegistrationBOImpl;
-import lk.ijse.BO.impl.StudentBoImpl;
-import lk.ijse.BO.impl.UserBoImpl;
+import lk.ijse.BO.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -14,7 +11,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-       STUDENT,USER,COURSE,REGISTRATION
+       STUDENT,USER,COURSE,REGISTRATION,payment
     }
 
     //Object creation logic for BO objects
@@ -36,7 +33,9 @@ public class BOFactory {
             {
                 return new RegistrationBOImpl();
             }
-
+            case payment -> {
+                return new PaymentBOImpl();
+            }
         }
         return null;
     }

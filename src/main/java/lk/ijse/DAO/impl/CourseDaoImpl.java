@@ -6,6 +6,7 @@ import lk.ijse.config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +30,16 @@ public class CourseDaoImpl implements CourseDao {
         return false;
 
 
+    }
+
+    @Override
+    public List<Course> getAll() throws IOException {
+        return List.of();
+    }
+
+    @Override
+    public String getCurrentID() throws IOException {
+        return "";
     }
 
     @Override
@@ -68,18 +79,22 @@ public class CourseDaoImpl implements CourseDao {
     }
 
     @Override
+    public Course search(String id) throws IOException {
+        return null;
+    }
+
+    @Override
     public List<Course> getaAll() throws IOException {
+
+
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        List<Course> list = session.createQuery("from Course ", Course.class).list();
-
-
+        Query query = session.createQuery("from Course ");
+        List<Course> programs = query.list();
         transaction.commit();
         session.close();
-
-
-        return list;
+        return programs;
     }
 
 

@@ -1,6 +1,7 @@
 package lk.ijse.BO.custom;
 
 import lk.ijse.BO.SuperBo;
+import lk.ijse.DTO.CourseDto;
 import lk.ijse.Entity.Course;
 
 import java.io.IOException;

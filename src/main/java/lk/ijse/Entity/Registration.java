@@ -1,39 +1,36 @@
 package lk.ijse.Entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
+import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 public class Registration {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private LocalDate enrollmentDate;
-
-    private Double Payment;
-
-    private Double DueAmount;
-
+    private String registrationID;
+    private String date;
     @ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
+    @JoinColumn(name = "student_id")
     private Student student;
-
     @ManyToOne
-    @JoinColumn(name = "program_id", nullable = false)
+    @JoinColumn(name = "program_id")
     private Course course;
+    private String studentName;
+    private String programName;
+    private double programFee;
+    private double upfrontPayment;
+
+    @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)
+    List<Payment> payments;
 
 
-    public Registration(String studentId, String courseId, String paymentAmount) {
-    }
-
-    public Registration(String studentId, String courseId, double v) {
+    public Registration(String registrationID, String date, Student student, Course course, String studentName, String programName, double programFee, double upfrontPayment) {
     }
 }

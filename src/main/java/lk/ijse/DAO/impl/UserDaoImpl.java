@@ -69,8 +69,15 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    @Override
+    public List<User> getAll() throws IOException {
+        return List.of();
+    }
 
-
+    @Override
+    public String getCurrentID() throws IOException {
+        return "";
+    }
 
 
     @Override
@@ -87,6 +94,15 @@ public class UserDaoImpl implements UserDao {
         return false;
     }
 
+    @Override
+    public boolean delete(String id) throws IOException {
+        return false;
+    }
+
+    @Override
+    public User search(String id) throws IOException {
+        return null;
+    }
 
 
     @Override

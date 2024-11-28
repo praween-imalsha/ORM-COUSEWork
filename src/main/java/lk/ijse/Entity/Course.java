@@ -24,6 +24,9 @@ public class Course {
 
         private double fee;
 
+        public Course(int programId) {
+        }
+
 
        /* @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<Registration> registrations =new ArrayList<>();

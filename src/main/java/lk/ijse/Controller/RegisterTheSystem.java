@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -38,7 +39,7 @@ public class RegisterTheSystem extends UserService {
 
     @FXML
     private TextField usernametxt1;
-
+    public static String userRole = "";
     @FXML
     void SignUpOnAction(ActionEvent event) {
         String username = usernametxt1.getText();
@@ -50,8 +51,27 @@ public class RegisterTheSystem extends UserService {
         user.setPassword(password);
         user.setRole(role);
 
-        UserService userService = new UserService();
-        userService.registerUser(username, password, role);
+        RegisterTheSystem registerTheSystem = new RegisterTheSystem();
+        registerTheSystem.registerUser(username,password,role);
+
+        if (role != null && role.equals("admin")) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Welcome Admin!  " + username).show();
+            userRole = "admin";
+        } else if (role != null && role.equals("coordinator")) {
+            userRole = "coordinator";
+            new Alert(Alert.AlertType.CONFIRMATION, "Welcome coordinator!  " + username).show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid role!").show();
+        }
+
+        clearetextField();
+    }
+
+    private void clearetextField() {
+        usernametxt1.setText("");
+        passwordtxt1.setText("");
+        role1.setText("");
+
     }
 
     @FXML

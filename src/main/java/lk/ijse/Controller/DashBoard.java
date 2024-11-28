@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.DAO.DaoFactory;
+import lk.ijse.DAO.custom.UserDao;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,7 +33,7 @@ public class DashBoard implements Initializable {
     @FXML
     private Button logOutbtn;
 
-
+    UserDao userDao = (UserDao) DaoFactory.getDaoFactory().getDAO(DaoFactory.DAOTypes.USER);
     @FXML
     private Button DashBoardbtn;
 
@@ -68,7 +70,7 @@ public class DashBoard implements Initializable {
     }
 
     public void PaymentManagmentOnAction(ActionEvent actionEvent) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/Payment.fxml"));
+        Parent parent= FXMLLoader.load(getClass().getResource("/view/payment_form.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
 
@@ -89,6 +91,11 @@ public class DashBoard implements Initializable {
 
     public void UserManageOnAction(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/View/UserForm.fxml"));
+        Emptypane.getChildren().setAll(parent);
+    }
+
+    public  void RegestationOnAction( ) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/View/registration_form.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
 }

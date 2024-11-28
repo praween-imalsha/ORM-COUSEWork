@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface CourseDao extends CrudDao<Course> {
 
-    boolean delete(String entity) throws IOException;
+
+    boolean delete(int id) throws IOException;
 
     List<Course> getaAll() throws IOException;
 

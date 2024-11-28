@@ -12,8 +12,7 @@ import lombok.NoArgsConstructor;
 public class StudentTM extends StudentController {
 
     private int id;
-    private  String FirstName;
-    private  String LastName;
+    private  String Name;
     private  String address;
     private String email;
     private  String PhoneNumber;
