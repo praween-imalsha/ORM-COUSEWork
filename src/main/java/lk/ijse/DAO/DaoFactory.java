@@ -1,5 +1,6 @@
 package lk.ijse.DAO;
 
+import lk.ijse.BO.impl.RegistrationBOImpl;
 import lk.ijse.DAO.impl.*;
 
 public class DaoFactory {
