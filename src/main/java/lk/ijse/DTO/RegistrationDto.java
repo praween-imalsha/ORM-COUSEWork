@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 public class RegistrationDto {
 
-    private String regiId;
+    private Long id;
 
     private LocalDate enrollmentDate;
 

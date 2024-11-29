@@ -28,10 +28,10 @@ public class DaoFactory {
                 return new CourseDaoImpl();
             }
             case REGISTRATION -> {
-                return new RegistrationDAOImpl();
+                return new RegistrationDaoImpl();
             }
             case payment -> {
-                return new PaymentDAOImpl();
+                return new PaymentDaoImpl();
             }
         }
         return null;

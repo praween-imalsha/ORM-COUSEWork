@@ -1,22 +1,25 @@
 package lk.ijse.BO.custom;
 
 import lk.ijse.BO.SuperBo;
-import lk.ijse.DTO.PaymentDto;
+import lk.ijse.Entity.Payment;
 import lk.ijse.Entity.Registration;
+
 
 import java.io.IOException;
 import java.util.List;
 
 public interface PaymentBO extends SuperBo {
-    List<Registration> getRegistrationIds() throws IOException;
+    boolean saveRegistration(Registration entity) throws IOException;
 
-    double getPaidAmountByRegistrationId(Registration selectedRegistrationId) throws IOException;
+    List<Registration> getAllRegistrationDetails() throws IOException;
 
-    double getFullFeeByRegistrationId(Registration selectedRegistrationId) throws IOException;
+    boolean deleteRegistration(Long id) throws IOException;
 
-    boolean save(PaymentDto paymentDto) throws IOException;
+    boolean savePayment(Payment entity) throws IOException;
 
-    List<PaymentDto> getAllPayments() throws IOException;
+    List<Payment> getAllPayment() throws IOException;
 
-    String generatePaymentId() throws IOException;
+    boolean UpdatePayment(Payment entity) throws IOException;
+
+    boolean deletePayment(Long id) throws IOException;
 }

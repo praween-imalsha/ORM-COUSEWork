@@ -1,32 +1,34 @@
 package lk.ijse.Entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Entity
 public class Payment {
 
     @Id
-    private String paymentId;
-    private double amount;
-    private double paidAmount;
-    private double fullPayment;
-    private double pay;
-    private double balance;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private LocalDate enrollmentDate;
+    private Double payment;
+    private Double dueAmount;
+    private String studentName;
+    private String programName;
+    private Double duePayment;
 
 
-        @OneToOne(cascade = CascadeType.ALL)
-      //  @Column(name = "registration")
-        private Registration registration;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "registration_id", nullable = false)
+    private Registration registration;
+
+
+
 
 }

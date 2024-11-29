@@ -13,7 +13,7 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/RegisterTheSystem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Registaionsystem.fxml"));
         AnchorPane rootNode = loader.load();
 
         Scene scene = new Scene(rootNode);

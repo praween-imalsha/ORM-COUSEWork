@@ -1,6 +1,6 @@
 package lk.ijse.config;
 
-import lk.ijse.Controller.PaymentFormController;
+
 import lk.ijse.Entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -28,19 +28,11 @@ public class Student {
 
         private LocalDate enrollmentDate;
 
-        @ManyToOne
-        private User user;
-        @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+        @OneToMany(mappedBy = "student", cascade = {CascadeType.MERGE, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
         private List<Registration> registrations = new ArrayList<>();
-        public Student(int studentId) {
-        }
 
-        public Student(int id, String name, String address, String email, String number, LocalDate enrollmentDate) {
-        }
-
-
-        public Student(String studentName) {
-        }
+    public Student(int id, String name, String address, String email, String phoneNumber, LocalDate enrollmentDate) {
+    }
 }
 
 

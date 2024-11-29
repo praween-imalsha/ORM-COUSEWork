@@ -46,7 +46,7 @@ public class DashBoard implements Initializable {
 
     @FXML
     void StudentManageOnAction(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/StudentForm.fxml"));
+        Parent parent= FXMLLoader.load(getClass().getResource("/View/StudentForm.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
 
@@ -54,7 +54,7 @@ public class DashBoard implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/view/AdminDashBoard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/View/AdminDashBoard.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -65,12 +65,12 @@ public class DashBoard implements Initializable {
 
     @FXML
     void DashBoradOnAction(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/AdminDashBoard.fxml"));
+        Parent parent= FXMLLoader.load(getClass().getResource("/View/AdminDashBoard.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
 
     public void PaymentManagmentOnAction(ActionEvent actionEvent) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getResource("/view/payment_form.fxml"));
+        Parent parent= FXMLLoader.load(getClass().getResource("/View/paymentFrom.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
 
@@ -95,7 +95,7 @@ public class DashBoard implements Initializable {
     }
 
     public  void RegestationOnAction( ) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/View/registration_form.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/View/Register.fxml"));
         Emptypane.getChildren().setAll(parent);
     }
 }

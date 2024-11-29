@@ -67,7 +67,6 @@ public class Logincontroller {
         UserDaoImpl userDao = new UserDaoImpl();
         return userDao.getUserByUsername(username);
     }
-    }
-
+}
 
 

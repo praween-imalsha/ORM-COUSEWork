@@ -16,8 +16,8 @@ public class CourseBOImpl implements CourseBO {
     CourseDao courseDao = (CourseDao) DaoFactory.getDaoFactory().getDAO(DaoFactory.DAOTypes.COURSE);
 
     @Override
-    public boolean saveCourse(Course entity) throws IOException {
-        return courseDao.save(new Course(entity.getId(),entity.getProgramId(),entity.getProgramName(),entity.getDuration(),entity.getFee()));
+    public boolean saveCourse(Course course) throws IOException {
+        return courseDao.save(new Course(course.getId(),course.getProgramId(),course.getProgramName(),course.getDuration(),course.getFee()));
     }
 
     @Override

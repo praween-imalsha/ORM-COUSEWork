@@ -105,40 +105,7 @@ public class UserForm implements Initializable {
 
     @FXML
     void saveOnActionStudent(ActionEvent event) {
-        String username = usernametxt.getText();
-        String password = passwroddtxt.getText();
-        String role = roletxt.getText();
 
-        // Check if all fields are filled
-        if (username.isEmpty() || password.isEmpty() || role.isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Please fill all fields").show();
-            return; // Exit the method if any field is empty
-        }
-
-
-        User newUser = new User(0, username, password, role);
-
-
-        boolean isSaved = false;
-        try {
-            isSaved = userBO.saveUser(newUser);
-        } catch (IOException e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Failed to save user").show();
-            return;
-        }
-
-        // Step 4: Show the success/failure message
-        if (isSaved) {
-            new Alert(Alert.AlertType.INFORMATION, "User saved successfully").show();
-            try {
-                loadallvalues(); // Refresh the table view to show the newly added user
-            } catch (SQLException | IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to save user").show();
-        }
     }
 
     public void loadallvalues() throws SQLException, IOException {
